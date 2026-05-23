@@ -1,0 +1,50 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env", ".env.local"],
+  "globalEnv": [
+    "NODE_ENV",
+    "AWS_REGION",
+    "AWS_PROFILE",
+    "CAMUNDA_CLUSTER_ID",
+    "CAMUNDA_CLUSTER_REGION",
+    "CAMUNDA_CLIENT_ID",
+    "CAMUNDA_CLIENT_SECRET",
+    "CAMUNDA_OAUTH_URL",
+    "CAMUNDA_CONSOLE_CLIENT_ID",
+    "CAMUNDA_CONSOLE_CLIENT_SECRET",
+    "COGNITO_USER_POOL_ID",
+    "COGNITO_USER_POOL_CLIENT_ID",
+    "DYNAMODB_TABLE",
+    "S3_KNOWLEDGE_BUCKET",
+    "BEDROCK_KB_ID",
+    "SECRETS_MANAGER_PREFIX",
+    "WEBHOOK_SIGNING_SECRET",
+    "APP_URL",
+    "NEXT_PUBLIC_API_BASE_URL",
+    "NEXT_PUBLIC_COGNITO_DOMAIN",
+    "NEXT_PUBLIC_COGNITO_USER_POOL_ID",
+    "NEXT_PUBLIC_COGNITO_CLIENT_ID"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "cdk.out/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
