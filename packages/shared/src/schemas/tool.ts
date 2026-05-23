@@ -1,20 +1,13 @@
 import { z } from "zod";
 import { ToolIdSchema } from "../ids.js";
 
-export const ToolParamSchema: z.ZodType<ToolParam> = z.lazy(() =>
-  z.object({
-    name: z.string().min(1).max(64),
-    description: z.string().min(1).max(512),
-    type: z.enum(["string", "number", "boolean", "object", "array"]),
-    required: z.boolean().default(false),
-  }),
-);
-export interface ToolParam {
-  name: string;
-  description: string;
-  type: "string" | "number" | "boolean" | "object" | "array";
-  required: boolean;
-}
+export const ToolParamSchema = z.object({
+  name: z.string().min(1).max(64),
+  description: z.string().min(1).max(512),
+  type: z.enum(["string", "number", "boolean", "object", "array"]),
+  required: z.boolean().default(false),
+});
+export type ToolParam = z.infer<typeof ToolParamSchema>;
 
 const ToolBase = z.object({
   id: ToolIdSchema,
