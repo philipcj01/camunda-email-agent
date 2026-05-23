@@ -17,7 +17,7 @@ export type KnowledgeId = z.infer<typeof KnowledgeIdSchema>;
  * support native multi-tenancy.
  */
 export const processIdForTenant = (tenantId: TenantId): string =>
-  `email-agent--${tenantId}`;
+  `sable--${tenantId}`;
 
 /**
  * Camunda secret name convention: per-tenant secrets are prefixed so we can

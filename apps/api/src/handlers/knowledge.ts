@@ -4,8 +4,8 @@ import type {
   APIGatewayProxyHandlerV2WithJWTAuthorizer,
 } from "aws-lambda";
 import { z } from "zod";
-import { KnowledgeIdSchema, type KnowledgeDoc } from "@camunda-email-agent/shared";
-import { knowledgeRepo, knowledgeKey, s3Helpers } from "@camunda-email-agent/storage";
+import { KnowledgeIdSchema, type KnowledgeDoc } from "@sable/shared";
+import { knowledgeRepo, knowledgeKey, s3Helpers } from "@sable/storage";
 import { tenantFrom } from "../lib/auth.js";
 import { parseBody } from "../lib/parse.js";
 import { created, noContent, notFound, ok, serverError } from "../lib/response.js";

@@ -3,16 +3,22 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/cn";
 
 const variants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors",
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium tracking-tight transition-colors",
   {
     variants: {
       variant: {
-        default: "border-transparent bg-[var(--color-primary)] text-[var(--color-primary-foreground)]",
-        secondary: "border-transparent bg-[var(--color-secondary)] text-[var(--color-secondary-foreground)]",
-        outline: "text-[var(--color-foreground)] border-[var(--color-border)]",
-        success: "border-transparent bg-emerald-500 text-white",
-        warning: "border-transparent bg-amber-500 text-white",
-        destructive: "border-transparent bg-[var(--color-destructive)] text-[var(--color-destructive-foreground)]",
+        default:
+          "bg-[var(--color-foreground)] text-[var(--color-background)] border-transparent",
+        secondary:
+          "bg-[var(--color-muted)] text-[var(--color-foreground)] border-[var(--color-border)]",
+        outline:
+          "bg-transparent text-[var(--color-muted-foreground)] border-[var(--color-border-strong)]",
+        success:
+          "bg-emerald-500/10 text-emerald-500 border-emerald-500/30",
+        warning:
+          "bg-amber-500/10 text-amber-500 border-amber-500/30",
+        destructive:
+          "bg-rose-500/10 text-rose-500 border-rose-500/30",
       },
     },
     defaultVariants: { variant: "default" },

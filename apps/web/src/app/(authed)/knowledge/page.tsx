@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { BookOpen, Trash2, UploadCloud } from "lucide-react";
 import { toast } from "sonner";
-import type { KnowledgeDoc, PresignedUploadResponse } from "@camunda-email-agent/shared";
+import type { KnowledgeDoc, PresignedUploadResponse } from "@sable/shared";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

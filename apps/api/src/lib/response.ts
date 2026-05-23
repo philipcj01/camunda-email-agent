@@ -2,7 +2,7 @@ import type { APIGatewayProxyResultV2 } from "aws-lambda";
 
 const CORS = {
   "access-control-allow-origin": process.env.CORS_ORIGIN ?? "*",
-  "access-control-allow-headers": "content-type,authorization,x-cea-signature,x-cea-timestamp,x-cea-tenant-id",
+  "access-control-allow-headers": "content-type,authorization,x-sable-signature,x-sable-timestamp,x-sable-tenant-id",
   "access-control-allow-methods": "GET,POST,PUT,DELETE,OPTIONS",
 };
 

@@ -44,7 +44,7 @@ pnpm install
 cp .env.example .env
 
 # 3. Provision AWS resources
-pnpm --filter @camunda-email-agent/cdk deploy --all
+pnpm --filter @sable/cdk deploy --all
 
 # 4. Run frontend + API locally
 pnpm dev

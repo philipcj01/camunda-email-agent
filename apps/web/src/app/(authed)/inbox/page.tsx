@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Inbox, Mail } from "lucide-react";
-import type { Thread } from "@camunda-email-agent/shared";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Inbox } from "lucide-react";
+import type { Thread } from "@sable/shared";
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { api } from "@/lib/api";
 
@@ -17,58 +17,65 @@ export default function InboxPage() {
   }, []);
 
   return (
-    <div className="space-y-6">
-      <header>
-        <h1 className="text-3xl font-semibold tracking-tight">Inbox</h1>
-        <p className="text-sm text-[var(--color-muted-foreground)]">
+    <div className="space-y-8">
+      <header className="space-y-2">
+        <h1 className="text-4xl font-semibold tracking-[-0.025em]">Inbox</h1>
+        <p className="text-[15px] text-[var(--color-muted-foreground)] max-w-2xl">
           Every email your agent has handled, with the full chat history.
         </p>
       </header>
 
       {threads.length === 0 ? (
         <Card>
-          <CardContent className="flex flex-col items-center gap-2 py-16 text-center">
-            <Inbox className="size-8 text-[var(--color-muted-foreground)]" />
+          <CardContent className="flex flex-col items-center gap-3 py-20 text-center">
+            <span className="inline-flex size-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface-muted)]">
+              <Inbox className="size-4 text-[var(--color-muted-foreground)]" />
+            </span>
             <CardTitle>No messages yet</CardTitle>
-            <CardDescription>
-              Once you deploy the agent and an email arrives, it appears here.
+            <CardDescription className="max-w-sm">
+              Once you deploy the agent and an email arrives, it appears here in real time.
             </CardDescription>
           </CardContent>
         </Card>
       ) : (
-        <div className="grid gap-2">
-          {threads.map((t) => (
-            <Link key={t.threadId} href={`/inbox/${encodeURIComponent(t.threadId)}`}>
-              <Card className="transition-colors hover:border-[var(--color-primary)]">
-                <CardContent className="flex items-center justify-between py-4">
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <Mail className="size-4 text-[var(--color-muted-foreground)]" />
-                      <span className="truncate font-medium">{t.subject || "(no subject)"}</span>
+        <Card className="overflow-hidden p-0">
+          <ul className="divide-y divide-[var(--color-border)]">
+            {threads.map((t) => (
+              <li key={t.threadId}>
+                <Link
+                  href={`/inbox/${encodeURIComponent(t.threadId)}`}
+                  className="grid grid-cols-[1fr_auto_auto] items-center gap-4 px-5 py-3.5 transition-colors hover:bg-[var(--color-accent)]/50"
+                >
+                  <div className="min-w-0">
+                    <div className="truncate text-[14px] font-medium tracking-tight">
+                      {t.subject || "(no subject)"}
                     </div>
-                    <div className="mt-1 truncate text-xs text-[var(--color-muted-foreground)]">
+                    <div className="mt-0.5 truncate text-[12px] text-[var(--color-muted-foreground)]">
                       {t.participants.map((p) => p.address).join(", ")}
                     </div>
                   </div>
-                  <div className="ml-4 flex items-center gap-3 text-right">
-                    <Badge
-                      variant={
-                        t.status === "replied" ? "success" :
-                        t.status === "awaiting_agent" ? "warning" :
-                        t.status === "closed" ? "outline" : "secondary"
-                      }
-                    >
-                      {t.status.replace("_", " ")}
-                    </Badge>
-                    <div className="w-32 text-xs text-[var(--color-muted-foreground)]">
-                      {new Date(t.lastMessageAt).toLocaleString()}
-                    </div>
+                  <Badge
+                    variant={
+                      t.status === "replied" ? "success" :
+                      t.status === "awaiting_agent" ? "warning" :
+                      t.status === "closed" ? "outline" : "secondary"
+                    }
+                  >
+                    {t.status.replace("_", " ")}
+                  </Badge>
+                  <div className="w-28 text-right text-[11px] tabular-nums text-[var(--color-muted-foreground)]">
+                    {new Date(t.lastMessageAt).toLocaleString(undefined, {
+                      month: "short",
+                      day: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
                   </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Card>
       )}
     </div>
   );

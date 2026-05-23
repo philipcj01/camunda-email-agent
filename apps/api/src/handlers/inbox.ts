@@ -2,8 +2,8 @@ import type {
   APIGatewayProxyEventV2WithJWTAuthorizer,
   APIGatewayProxyHandlerV2WithJWTAuthorizer,
 } from "aws-lambda";
-import { ThreadIdSchema } from "@camunda-email-agent/shared";
-import { messagesRepo, threadsRepo } from "@camunda-email-agent/storage";
+import { ThreadIdSchema } from "@sable/shared";
+import { messagesRepo, threadsRepo } from "@sable/storage";
 import { tenantFrom } from "../lib/auth.js";
 import { notFound, ok, serverError } from "../lib/response.js";
 

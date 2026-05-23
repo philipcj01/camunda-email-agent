@@ -3,7 +3,7 @@ import {
   WEBHOOK_HEADER_SIGNATURE,
   WEBHOOK_HEADER_TENANT,
   WEBHOOK_HEADER_TIMESTAMP,
-} from "@camunda-email-agent/shared";
+} from "@sable/shared";
 
 const SIGNING_SECRET = () => {
   const v = process.env.WEBHOOK_SIGNING_SECRET;

@@ -8,5 +8,5 @@ export const storageConfig = {
   region: () => process.env.AWS_REGION ?? "eu-west-1",
   tableName: () => required("DYNAMODB_TABLE"),
   knowledgeBucket: () => required("S3_KNOWLEDGE_BUCKET"),
-  secretsPrefix: () => process.env.SECRETS_MANAGER_PREFIX ?? "email-agent",
+  secretsPrefix: () => process.env.SECRETS_MANAGER_PREFIX ?? "sable",
 };

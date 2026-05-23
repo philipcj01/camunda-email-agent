@@ -6,16 +6,16 @@ import {
   type DeployPreview,
   type DeploymentRecord,
   processIdForTenant,
-} from "@camunda-email-agent/shared";
+} from "@sable/shared";
 import {
   agentConfigRepo,
   deploymentsRepo,
   emailConfigRepo,
   secretsHelpers,
   toolsRepo,
-} from "@camunda-email-agent/storage";
-import { generateBpmn, unifiedDiff } from "@camunda-email-agent/bpmn-generator";
-import { deployBpmn, upsertManyClusterSecrets } from "@camunda-email-agent/camunda-client";
+} from "@sable/storage";
+import { generateBpmn, unifiedDiff } from "@sable/bpmn";
+import { deployBpmn, upsertManyClusterSecrets } from "@sable/engine";
 import { tenantFrom, emailFromClaims } from "../lib/auth.js";
 import { badRequest, ok, serverError } from "../lib/response.js";
 

@@ -1,4 +1,4 @@
-import type { TenantId, ToolId, ThreadId, KnowledgeId } from "@camunda-email-agent/shared";
+import type { TenantId, ToolId, ThreadId, KnowledgeId } from "@sable/shared";
 
 export const PK = (tenantId: TenantId) => `TENANT#${tenantId}`;
 

@@ -1,0 +1,329 @@
+/* ───────────────────────────────────────────────────────────────────────────
+ * Amplify UI overrides — map every brand-blue token to our zinc neutrals,
+ * align radii with shadcn/iOS, and give the sign-in card a glass surface.
+ * Loaded AFTER `@aws-amplify/ui-react/styles.css` so this file wins.
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+[data-amplify-theme="sable"],
+[data-amplify-authenticator] {
+  /* Brand → zinc (neutral mono) */
+  --amplify-colors-brand-primary-10: #fafafa;
+  --amplify-colors-brand-primary-20: #f4f4f5;
+  --amplify-colors-brand-primary-40: #d4d4d8;
+  --amplify-colors-brand-primary-60: #71717a;
+  --amplify-colors-brand-primary-80: #18181b;
+  --amplify-colors-brand-primary-90: #09090b;
+  --amplify-colors-brand-primary-100: #000000;
+
+  --amplify-colors-brand-secondary-10: #fafafa;
+  --amplify-colors-brand-secondary-20: #f4f4f5;
+  --amplify-colors-brand-secondary-40: #d4d4d8;
+  --amplify-colors-brand-secondary-60: #71717a;
+  --amplify-colors-brand-secondary-80: #18181b;
+  --amplify-colors-brand-secondary-90: #09090b;
+  --amplify-colors-brand-secondary-100: #000000;
+
+  /* Fonts */
+  --amplify-fonts-default-static: var(--font-sans);
+  --amplify-fonts-default-variable: var(--font-sans);
+
+  /* iOS-feel radii */
+  --amplify-radii-xs: 6px;
+  --amplify-radii-small: 10px;
+  --amplify-radii-medium: 12px;
+  --amplify-radii-large: 14px;
+  --amplify-radii-xl: 18px;
+  --amplify-radii-xxl: 22px;
+
+  /* Borders subtle */
+  --amplify-colors-border-primary: var(--color-border);
+  --amplify-colors-border-secondary: var(--color-border);
+  --amplify-colors-border-tertiary: var(--color-border-strong);
+  --amplify-colors-border-focus: var(--color-foreground);
+  --amplify-components-fieldcontrol-border-color: var(--color-border);
+  --amplify-components-fieldcontrol-focus-border-color: var(--color-foreground);
+  --amplify-components-fieldcontrol-border-radius: 12px;
+
+  /* Backgrounds */
+  --amplify-colors-background-primary: var(--color-background);
+  --amplify-colors-background-secondary: var(--color-surface-muted);
+  --amplify-colors-background-tertiary: var(--color-muted);
+
+  /* Text */
+  --amplify-colors-font-primary: var(--color-foreground);
+  --amplify-colors-font-secondary: var(--color-muted-foreground);
+  --amplify-colors-font-tertiary: var(--color-muted-foreground);
+  --amplify-colors-font-interactive: var(--color-foreground);
+  --amplify-colors-font-hover: var(--color-foreground);
+  --amplify-colors-font-focus: var(--color-foreground);
+
+  /* Buttons */
+  --amplify-components-button-primary-background-color: var(--color-foreground);
+  --amplify-components-button-primary-color: var(--color-background);
+  --amplify-components-button-primary-hover-background-color: var(--color-foreground);
+  --amplify-components-button-primary-hover-color: var(--color-background);
+  --amplify-components-button-primary-focus-background-color: var(--color-foreground);
+  --amplify-components-button-primary-focus-color: var(--color-background);
+  --amplify-components-button-primary-active-background-color: var(--color-foreground);
+  --amplify-components-button-primary-active-color: var(--color-background);
+  --amplify-components-button-primary-border-color: transparent;
+  --amplify-components-button-border-radius: 12px;
+  --amplify-components-button-font-weight: 500;
+  --amplify-components-button-letter-spacing: -0.01em;
+
+  /* Link buttons */
+  --amplify-components-button-link-color: var(--color-foreground);
+  --amplify-components-button-link-hover-color: var(--color-foreground);
+  --amplify-components-button-link-hover-background-color: var(--color-accent);
+  --amplify-components-button-link-focus-color: var(--color-foreground);
+  --amplify-components-button-link-active-background-color: var(--color-accent);
+
+  /* Tabs (Sign In / Create Account) */
+  --amplify-components-tabs-item-color: var(--color-muted-foreground);
+  --amplify-components-tabs-item-active-color: var(--color-foreground);
+  --amplify-components-tabs-item-hover-color: var(--color-foreground);
+  --amplify-components-tabs-item-focus-color: var(--color-foreground);
+  --amplify-components-tabs-item-active-border-color: var(--color-foreground);
+  --amplify-components-tabs-item-border-color: var(--color-border);
+  --amplify-components-tabs-border-color: var(--color-border);
+
+  /* Field control (input) */
+  --amplify-components-fieldcontrol-color: var(--color-foreground);
+  --amplify-components-fieldcontrol-placeholder-color: var(--color-muted-foreground);
+  --amplify-components-fieldcontrol-background-color: var(--color-surface-muted);
+  --amplify-components-fieldcontrol-focus-box-shadow: 0 0 0 2px rgb(0 0 0 / 0.05);
+
+  /* Authenticator container card */
+  --amplify-components-authenticator-router-background-color: var(--color-card);
+  --amplify-components-authenticator-router-border-color: var(--color-border);
+  --amplify-components-authenticator-router-box-shadow: 0 8px 32px -16px rgb(0 0 0 / 0.18);
+  --amplify-components-authenticator-router-border-width: 1px;
+
+  /* Page background behind the card */
+  --amplify-components-authenticator-container-background-color: var(--color-background);
+  --amplify-components-authenticator-state-inactive-background-color: var(--color-muted);
+}
+
+/* The router/card itself — round it generously, give it the iOS feel */
+[data-amplify-authenticator] [data-amplify-router] {
+  border-radius: 22px !important;
+  overflow: hidden;
+  max-width: 420px;
+  width: 100%;
+}
+
+[data-amplify-authenticator] [data-amplify-container] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 32px 16px;
+  gap: 24px;
+}
+
+/* Inputs */
+[data-amplify-authenticator] .amplify-input,
+[data-amplify-authenticator] .amplify-select {
+  border-radius: 12px !important;
+  border-color: var(--color-border) !important;
+  background-color: var(--color-surface-muted) !important;
+  height: 44px;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+[data-amplify-authenticator] .amplify-input:hover,
+[data-amplify-authenticator] .amplify-select:hover {
+  border-color: var(--color-border-strong) !important;
+}
+
+[data-amplify-authenticator] .amplify-input:focus-visible,
+[data-amplify-authenticator] .amplify-select:focus-visible,
+[data-amplify-authenticator] .amplify-input:focus {
+  border-color: var(--color-foreground) !important;
+  box-shadow: 0 0 0 3px rgb(0 0 0 / 0.06) !important;
+  outline: none !important;
+}
+
+/* Primary button */
+[data-amplify-authenticator] .amplify-button[data-variation="primary"] {
+  border-radius: 12px !important;
+  background-color: var(--color-foreground) !important;
+  color: var(--color-background) !important;
+  border: none !important;
+  height: 44px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: opacity 150ms, transform 100ms;
+}
+[data-amplify-authenticator] .amplify-button[data-variation="primary"]:hover {
+  background-color: var(--color-foreground) !important;
+  opacity: 0.9;
+}
+[data-amplify-authenticator] .amplify-button[data-variation="primary"]:active {
+  transform: scale(0.98);
+}
+
+/* Link buttons (Forgot password, etc.) */
+[data-amplify-authenticator] .amplify-button[data-variation="link"] {
+  color: var(--color-foreground) !important;
+  border-radius: 8px !important;
+  font-weight: 500;
+}
+[data-amplify-authenticator] .amplify-button[data-variation="link"]:hover {
+  background-color: var(--color-accent) !important;
+}
+
+/* Tabs */
+[data-amplify-authenticator] .amplify-tabs {
+  border-bottom: 1px solid var(--color-border);
+}
+[data-amplify-authenticator] .amplify-tabs__item {
+  color: var(--color-muted-foreground) !important;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding-block: 14px;
+  transition: color 150ms;
+}
+[data-amplify-authenticator] .amplify-tabs__item:hover {
+  color: var(--color-foreground) !important;
+}
+[data-amplify-authenticator] .amplify-tabs__item[data-state="active"] {
+  color: var(--color-foreground) !important;
+  box-shadow: inset 0 -2px 0 var(--color-foreground);
+  border-color: transparent !important;
+}
+
+/* Field label */
+[data-amplify-authenticator] .amplify-label {
+  color: var(--color-foreground);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+
+/* Field hint / helper */
+[data-amplify-authenticator] .amplify-text--tertiary,
+[data-amplify-authenticator] .amplify-field__error-message {
+  font-size: 12px;
+}
+
+/* Form spacing */
+[data-amplify-authenticator] .amplify-flex {
+  gap: 14px;
+}
+
+/* Strip rounded heavy fieldset */
+[data-amplify-authenticator] fieldset {
+  border: none;
+  padding: 0;
+}
+
+/* ─── Password field: unify input + show/hide button into one surface ──────── */
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group {
+  display: flex;
+  align-items: stretch;
+  height: 44px;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  background-color: var(--color-surface-muted) !important;
+  overflow: hidden;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group:hover {
+  border-color: var(--color-border-strong) !important;
+}
+
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group:focus-within {
+  border-color: var(--color-foreground) !important;
+  box-shadow: 0 0 0 3px rgb(0 0 0 / 0.06) !important;
+}
+
+/* Inner input — strip its own borders/background, inherit the group surface */
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-input {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  flex: 1;
+}
+
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-input:hover,
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-input:focus,
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-input:focus-visible {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* The button column — square corner, full height, ghost styling */
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group__outer-end,
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group__inner-end {
+  display: flex;
+  align-items: stretch;
+  border: none !important;
+  background: transparent !important;
+}
+
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-button,
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group__outer-end .amplify-button,
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group__inner-end .amplify-button {
+  height: auto !important;
+  min-height: 0 !important;
+  width: 42px !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--color-muted-foreground) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+  /* Subtle divider between input and button */
+  border-left: 1px solid var(--color-border) !important;
+  transition: color 150ms, background-color 150ms;
+}
+
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-button:hover {
+  background: var(--color-accent) !important;
+  color: var(--color-foreground) !important;
+}
+
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-button:focus-visible {
+  outline: none !important;
+  box-shadow: inset 0 0 0 2px var(--color-foreground) !important;
+}
+
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-button:active {
+  transform: none !important;
+  background: var(--color-muted) !important;
+}
+
+/* The eye icon itself */
+[data-amplify-authenticator] .amplify-passwordfield .amplify-field-group .amplify-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* The "or" divider and federated buttons styling */
+[data-amplify-authenticator] .federated-sign-in-container {
+  gap: 8px;
+}
+
+/* Make the whole sign-in page background subtle */
+[data-amplify-authenticator]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    color-mix(in oklab, var(--color-foreground) 4%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+}

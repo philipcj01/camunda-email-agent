@@ -9,8 +9,8 @@ export default function AuthedLayout({ children }: { children: React.ReactNode }
         <Sidebar />
         <div className="flex flex-1 flex-col">
           <Topbar />
-          <main className="flex-1 overflow-auto bg-[var(--color-background)]">
-            <div className="mx-auto max-w-6xl p-6">{children}</div>
+          <main className="flex-1 overflow-auto">
+            <div className="mx-auto max-w-5xl px-6 py-10">{children}</div>
           </main>
         </div>
       </div>

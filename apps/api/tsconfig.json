@@ -8,8 +8,8 @@
   "references": [
     { "path": "../../packages/shared" },
     { "path": "../../packages/storage" },
-    { "path": "../../packages/bpmn-generator" },
-    { "path": "../../packages/camunda-client" }
+    { "path": "../../packages/bpmn" },
+    { "path": "../../packages/engine" }
   ],
   "include": ["src/**/*.ts"]
 }

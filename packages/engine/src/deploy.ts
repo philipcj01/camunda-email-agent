@@ -1,4 +1,4 @@
-import { processIdForTenant, type TenantId } from "@camunda-email-agent/shared";
+import { processIdForTenant, type TenantId } from "@sable/shared";
 import { camunda } from "./client.js";
 
 export interface DeployResult {

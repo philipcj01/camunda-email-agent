@@ -2,8 +2,8 @@ import type {
   APIGatewayProxyEventV2WithJWTAuthorizer,
   APIGatewayProxyHandlerV2WithJWTAuthorizer,
 } from "aws-lambda";
-import { ToolSchema, ToolIdSchema } from "@camunda-email-agent/shared";
-import { toolsRepo } from "@camunda-email-agent/storage";
+import { ToolSchema, ToolIdSchema } from "@sable/shared";
+import { toolsRepo } from "@sable/storage";
 import { tenantFrom } from "../lib/auth.js";
 import { parseBody } from "../lib/parse.js";
 import { badRequest, noContent, notFound, ok, serverError } from "../lib/response.js";

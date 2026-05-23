@@ -5,8 +5,8 @@ import {
   EmailReceivedWebhookSchema,
   type Email,
   type Thread,
-} from "@camunda-email-agent/shared";
-import { messagesRepo, threadsRepo } from "@camunda-email-agent/storage";
+} from "@sable/shared";
+import { messagesRepo, threadsRepo } from "@sable/storage";
 import { rawBody } from "../lib/parse.js";
 import { badRequest, ok, serverError, unauthorized } from "../lib/response.js";
 import {

@@ -4,7 +4,7 @@ import {
   DEFAULT_AGENT_CONFIG,
   type AgentConfig,
   type TenantId,
-} from "@camunda-email-agent/shared";
+} from "@sable/shared";
 import { ddb } from "../clients.js";
 import { storageConfig } from "../config.js";
 import { PK, SK } from "../keys.js";

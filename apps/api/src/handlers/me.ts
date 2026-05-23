@@ -2,7 +2,7 @@ import type {
   APIGatewayProxyEventV2WithJWTAuthorizer,
   APIGatewayProxyHandlerV2WithJWTAuthorizer,
 } from "aws-lambda";
-import { tenantRepo } from "@camunda-email-agent/storage";
+import { tenantRepo } from "@sable/storage";
 import { emailFromClaims, tenantFrom } from "../lib/auth.js";
 import { ok, serverError } from "../lib/response.js";
 

@@ -1,51 +1,162 @@
 @import "tailwindcss";
 
+/* ─── Theme tokens — pure neutrals (shadcn / iOS feel) ──────────────────────── */
 @theme {
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.145 0 0);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
-  --color-primary: oklch(0.59 0.18 264);
-  --color-primary-foreground: oklch(0.985 0 0);
-  --color-secondary: oklch(0.97 0 0);
-  --color-secondary-foreground: oklch(0.205 0 0);
-  --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
-  --color-accent: oklch(0.97 0 0);
-  --color-accent-foreground: oklch(0.205 0 0);
-  --color-destructive: oklch(0.577 0.245 27.325);
-  --color-destructive-foreground: oklch(0.985 0 0);
-  --color-border: oklch(0.922 0 0);
-  --color-input: oklch(0.922 0 0);
-  --color-ring: oklch(0.59 0.18 264);
-  --radius: 0.625rem;
+  --color-background: #ffffff;
+  --color-foreground: #09090b;       /* zinc-950 */
+
+  --color-card: #ffffff;
+  --color-card-foreground: #09090b;
+
+  --color-surface: rgba(255, 255, 255, 0.72);
+  --color-surface-strong: rgba(255, 255, 255, 0.92);
+  --color-surface-muted: #fafafa;    /* zinc-50 */
+
+  --color-border: #e4e4e7;           /* zinc-200 */
+  --color-border-strong: #d4d4d8;    /* zinc-300 */
+
+  --color-muted: #f4f4f5;            /* zinc-100 */
+  --color-muted-foreground: #71717a; /* zinc-500 */
+
+  --color-primary: #18181b;          /* zinc-900 */
+  --color-primary-foreground: #fafafa;
+
+  --color-accent: #f4f4f5;           /* zinc-100 */
+  --color-accent-foreground: #18181b;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-ring: #18181b;
+
+  /* iOS-feel radii — generous corners, all from a shared base */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 22px;
+  --radius: 14px;
+
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   @theme {
-    --color-background: oklch(0.145 0 0);
-    --color-foreground: oklch(0.985 0 0);
-    --color-card: oklch(0.205 0 0);
-    --color-card-foreground: oklch(0.985 0 0);
-    --color-primary: oklch(0.68 0.18 264);
-    --color-primary-foreground: oklch(0.145 0 0);
-    --color-secondary: oklch(0.269 0 0);
-    --color-secondary-foreground: oklch(0.985 0 0);
-    --color-muted: oklch(0.269 0 0);
-    --color-muted-foreground: oklch(0.708 0 0);
-    --color-accent: oklch(0.269 0 0);
-    --color-accent-foreground: oklch(0.985 0 0);
-    --color-border: oklch(0.269 0 0);
-    --color-input: oklch(0.269 0 0);
-    --color-ring: oklch(0.68 0.18 264);
+    --color-background: #09090b;       /* zinc-950 */
+    --color-foreground: #fafafa;
+
+    --color-card: #0a0a0a;
+    --color-card-foreground: #fafafa;
+
+    --color-surface: rgba(24, 24, 27, 0.6);     /* zinc-900 @ 60% */
+    --color-surface-strong: rgba(24, 24, 27, 0.85);
+    --color-surface-muted: #18181b;             /* zinc-900 */
+
+    --color-border: #27272a;           /* zinc-800 */
+    --color-border-strong: #3f3f46;    /* zinc-700 */
+
+    --color-muted: #18181b;            /* zinc-900 */
+    --color-muted-foreground: #a1a1aa; /* zinc-400 */
+
+    --color-primary: #fafafa;
+    --color-primary-foreground: #09090b;
+
+    --color-accent: #1f1f23;
+    --color-accent-foreground: #fafafa;
+
+    --color-ring: #fafafa;
   }
 }
 
-html, body { height: 100%; }
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+html,
 body {
-  background: var(--color-background);
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-background);
   color: var(--color-foreground);
-  font-feature-settings: "rlig" 1, "calt" 1;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family: var(--font-sans);
+  font-feature-settings:
+    "rlig" 1, "calt" 1,
+    "ss01" 1, "ss03" 1, "ss04" 1,
+    "cv11" 1;
+  font-variant-ligatures: contextual common-ligatures;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.005em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+  font-feature-settings:
+    "rlig" 1, "calt" 1,
+    "ss01" 1, "ss02" 1, "ss03" 1;
+  text-wrap: balance;
+}
+
+.text-3xl, .text-4xl, .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+  letter-spacing: -0.035em;
+}
+
+.tabular-nums, time, code, kbd, samp, .font-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+code, kbd, pre, samp, .font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "calt" 1, "ss01" 1, "ss02" 1, "ss06" 1;
+  font-variant-ligatures: none;
+}
+
+:not(pre) > code {
+  font-size: 0.875em;
+  padding: 0.1em 0.4em;
+  border-radius: 6px;
+  background-color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-foreground);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-foreground);
+}
+
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted-foreground);
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+}
+
+/* ─── Glass utilities — refined for iOS-style materiality ───────────────────── */
+@utility glass {
+  background-color: var(--color-surface);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--color-border);
+}
+
+@utility glass-strong {
+  background-color: var(--color-surface-strong);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid var(--color-border);
 }

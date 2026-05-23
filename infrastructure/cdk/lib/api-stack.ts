@@ -112,9 +112,9 @@ export class ApiStack extends cdk.Stack {
         allowHeaders: [
           "content-type",
           "authorization",
-          "x-cea-signature",
-          "x-cea-tenant-id",
-          "x-cea-timestamp",
+          "x-sable-signature",
+          "x-sable-tenant-id",
+          "x-sable-timestamp",
         ],
         maxAge: cdk.Duration.hours(1),
       },

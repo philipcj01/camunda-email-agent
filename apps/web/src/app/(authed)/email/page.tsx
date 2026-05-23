@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
-import type { EmailConfigInput } from "@camunda-email-agent/shared";
+import type { EmailConfigInput } from "@sable/shared";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -69,14 +69,14 @@ export default function EmailPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Email connector</h1>
         <p className="text-sm text-[var(--color-muted-foreground)]">
           IMAP credentials for inbound mail, SMTP for replies. Passwords are stored in AWS Secrets
-          Manager and only referenced from BPMN as <code>{`{{secrets.T_*_IMAP_PASS}}`}</code>.
+          Manager and never returned to the browser — only referenced by your process at runtime.
         </p>
       </header>
 
       <Card>
         <CardHeader>
           <CardTitle>Inbound (IMAP)</CardTitle>
-          <CardDescription>Where Camunda polls for new email.</CardDescription>
+          <CardDescription>Where the inbound connector polls for new email.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 sm:grid-cols-2">
           <Field label="Host" value={cfg.inbound.host} onChange={(v) => setCfg({ ...cfg, inbound: { ...cfg.inbound, host: v } })} />

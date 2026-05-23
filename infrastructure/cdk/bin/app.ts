@@ -17,7 +17,7 @@ const env = {
 };
 
 const stage = app.node.tryGetContext("stage") ?? "dev";
-const prefix = `cea-${stage}`;
+const prefix = `sable-${stage}`;
 
 const auth = new AuthStack(app, `${prefix}-auth`, { env, prefix });
 const data = new DataStack(app, `${prefix}-data`, { env, prefix });
@@ -45,7 +45,7 @@ new FrontendStack(app, `${prefix}-frontend`, {
   cognitoDomain: auth.cognitoDomain,
 });
 
-Tags.of(app).add("Project", "camunda-email-agent");
+Tags.of(app).add("Project", "sable");
 Tags.of(app).add("Stage", stage);
 Tags.of(app).add("Owner", "platform");
 

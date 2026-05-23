@@ -1,4 +1,4 @@
-import { camundaSecretName, type TenantId } from "@camunda-email-agent/shared";
+import { camundaSecretName, type TenantId } from "@sable/shared";
 import { camundaConfig } from "./config.js";
 
 interface ConsoleTokenCache {

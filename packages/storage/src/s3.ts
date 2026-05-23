@@ -1,6 +1,6 @@
 import { DeleteObjectCommand, HeadObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import { createPresignedPost, type PresignedPost } from "@aws-sdk/s3-presigned-post";
-import type { TenantId } from "@camunda-email-agent/shared";
+import type { TenantId } from "@sable/shared";
 import { s3 } from "./clients.js";
 import { storageConfig } from "./config.js";
 

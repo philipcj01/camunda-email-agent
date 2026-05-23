@@ -67,6 +67,6 @@ export const SearchKnowledgeResponseSchema = z.object({
 });
 export type SearchKnowledgeResponse = z.infer<typeof SearchKnowledgeResponseSchema>;
 
-export const WEBHOOK_HEADER_SIGNATURE = "x-cea-signature";
-export const WEBHOOK_HEADER_TENANT = "x-cea-tenant-id";
-export const WEBHOOK_HEADER_TIMESTAMP = "x-cea-timestamp";
+export const WEBHOOK_HEADER_SIGNATURE = "x-sable-signature";
+export const WEBHOOK_HEADER_TENANT = "x-sable-tenant-id";
+export const WEBHOOK_HEADER_TIMESTAMP = "x-sable-timestamp";

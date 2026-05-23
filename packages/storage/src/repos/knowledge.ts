@@ -11,7 +11,7 @@ import {
   type KnowledgeId,
   type KnowledgeSyncStatus,
   type TenantId,
-} from "@camunda-email-agent/shared";
+} from "@sable/shared";
 import { ddb } from "../clients.js";
 import { storageConfig } from "../config.js";
 import { PK, SK } from "../keys.js";

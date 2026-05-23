@@ -1,5 +1,5 @@
 import type { APIGatewayProxyEventV2WithJWTAuthorizer } from "aws-lambda";
-import { TenantIdSchema, type TenantId } from "@camunda-email-agent/shared";
+import { TenantIdSchema, type TenantId } from "@sable/shared";
 
 /**
  * Extract the tenant ID from the Cognito JWT claims on an API Gateway v2 event.

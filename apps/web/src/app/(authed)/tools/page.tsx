@@ -7,7 +7,7 @@ import {
   type HttpTool,
   type Tool,
   type ToolParam,
-} from "@camunda-email-agent/shared";
+} from "@sable/shared";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -72,7 +72,7 @@ export default function ToolsPage() {
           <h1 className="text-3xl font-semibold tracking-tight">Tools</h1>
           <p className="text-sm text-[var(--color-muted-foreground)]">
             The agent&apos;s toolbox. HTTP tools call your APIs; FEEL tools evaluate deterministic
-            expressions inside Camunda.
+            expressions inside the workflow engine.
           </p>
         </div>
         <div className="flex gap-2">
@@ -267,14 +267,14 @@ function ToolEditor({
           ))}
         </div>
 
-        <details className="rounded border border-[var(--color-border)] p-3 text-xs text-[var(--color-muted-foreground)]">
+        <details className="rounded-lg border border-[var(--color-border)] p-3 text-xs text-[var(--color-muted-foreground)]">
           <summary className="cursor-pointer font-medium text-[var(--color-foreground)]">
-            How this maps to Camunda
+            How this maps to the process
           </summary>
           <p className="mt-2">
-            On deploy, this tool becomes a descriptor on the AI Agent task in your tenant&apos;s BPMN.
-            HTTP tools call your URL via the Camunda HTTP/REST connector; FEEL tools evaluate inside
-            the engine with no external call.
+            On deploy, this tool becomes a descriptor on the AI Agent task in your tenant&apos;s
+            process. HTTP tools call your URL via the platform&apos;s REST connector; FEEL tools
+            evaluate inside the workflow engine with no external call.
           </p>
         </details>
 

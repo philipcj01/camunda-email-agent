@@ -1,5 +1,5 @@
 {
-  "name": "camunda-email-agent",
+  "name": "sable",
   "version": "0.1.0",
   "private": true,
   "description": "Camunda 8 SaaS Email Agent — multi-tenant platform for configuring email-driven AI agents",

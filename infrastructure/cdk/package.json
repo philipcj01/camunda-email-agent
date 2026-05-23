@@ -1,5 +1,5 @@
 {
-  "name": "@camunda-email-agent/cdk",
+  "name": "@sable/cdk",
   "version": "0.1.0",
   "private": true,
   "type": "commonjs",

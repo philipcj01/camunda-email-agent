@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { CheckCircle2, Rocket, XCircle, Clock } from "lucide-react";
 import { toast } from "sonner";
-import type { DeployPreview, DeploymentRecord } from "@camunda-email-agent/shared";
+import type { DeployPreview, DeploymentRecord } from "@sable/shared";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -50,7 +50,7 @@ export default function DeployPage() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Deploy</h1>
           <p className="text-sm text-[var(--color-muted-foreground)]">
-            Push your current configuration to Camunda 8 SaaS as a new BPMN version.
+            Push your current configuration to the workflow engine as a new process revision.
           </p>
         </div>
         <div className="flex gap-2">

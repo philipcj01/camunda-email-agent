@@ -1,5 +1,5 @@
 {
-  "name": "@camunda-email-agent/shared",
+  "name": "@sable/shared",
   "version": "0.1.0",
   "private": true,
   "type": "module",

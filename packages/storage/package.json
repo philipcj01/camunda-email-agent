@@ -1,5 +1,5 @@
 {
-  "name": "@camunda-email-agent/storage",
+  "name": "@sable/storage",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -23,7 +23,7 @@
     "@aws-sdk/client-s3": "^3.700.0",
     "@aws-sdk/s3-presigned-post": "^3.700.0",
     "@aws-sdk/client-secrets-manager": "^3.700.0",
-    "@camunda-email-agent/shared": "workspace:*",
+    "@sable/shared": "workspace:*",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ import {
   DEFAULT_AGENT_CONFIG,
   type AgentConfig,
   type Guardrail,
-} from "@camunda-email-agent/shared";
+} from "@sable/shared";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -71,7 +71,7 @@ export default function AgentPage() {
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">AI Agent</h1>
         <p className="text-sm text-[var(--color-muted-foreground)]">
-          The personality, instructions, and constraints baked into your Camunda AI Agent task.
+          The personality, instructions, and constraints baked into your tenant&apos;s AI Agent task.
         </p>
       </header>
 

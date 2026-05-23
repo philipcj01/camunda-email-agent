@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Camunda Email Agent — multi-tenant AI agents on Camunda 8 SaaS";
+export const alt = "Sable — Email Agents for the Enterprise";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,32 +15,40 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          backgroundColor: "#0a0a0f",
-          backgroundImage:
-            "radial-gradient(ellipse at top left, #1e1b4b 0%, #0a0a0f 60%)",
+          backgroundColor: "#09090b",
           color: "white",
           fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+        {/* Hairline inset frame */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 24,
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 28,
+          }}
+        />
+
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div
             style={{
-              width: 64,
-              height: 64,
+              width: 44,
+              height: 44,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              borderRadius: 16,
-              background: "linear-gradient(135deg, #5b6cf2 0%, #7c3aed 100%)",
+              borderRadius: 14,
+              backgroundColor: "#fafafa",
             }}
           >
             <svg
-              width="38"
-              height="38"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="white"
-              strokeWidth="2.2"
+              stroke="#09090b"
+              strokeWidth="2.6"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
@@ -48,33 +56,34 @@ export default function OpengraphImage() {
               <circle cx="7.5" cy="15.5" r="5.5" />
             </svg>
           </div>
-          <span style={{ fontSize: 30, fontWeight: 600, letterSpacing: -0.5 }}>
-            Camunda Email Agent
+          <span style={{ fontSize: 22, fontWeight: 500, letterSpacing: -0.3 }}>
+            Sable
           </span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div
             style={{
-              fontSize: 76,
-              fontWeight: 700,
-              letterSpacing: -2,
-              lineHeight: 1.05,
-              maxWidth: 980,
+              fontSize: 96,
+              fontWeight: 600,
+              letterSpacing: -4,
+              lineHeight: 0.98,
+              maxWidth: 1040,
             }}
           >
-            Configure AI email agents. Deploy to Camunda 8 SaaS.
+            Email Agents
           </div>
           <div
             style={{
-              fontSize: 28,
-              color: "#a1a1aa",
-              maxWidth: 900,
-              lineHeight: 1.3,
+              fontSize: 96,
+              fontWeight: 600,
+              letterSpacing: -4,
+              lineHeight: 0.98,
+              color: "#71717a",
+              maxWidth: 1040,
             }}
           >
-            Prompts, guardrails, tools, knowledge — all editable in a polished UI.
-            One click ships your tenant&apos;s BPMN process.
+            for the Enterprise.
           </div>
         </div>
 
@@ -82,20 +91,19 @@ export default function OpengraphImage() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 12,
-            fontSize: 20,
-            color: "#71717a",
+            justifyContent: "space-between",
+            fontSize: 18,
+            color: "#a1a1aa",
           }}
         >
-          <span>Next.js</span>
-          <span style={{ color: "#3f3f46" }}>·</span>
-          <span>AWS CDK</span>
-          <span style={{ color: "#3f3f46" }}>·</span>
-          <span>Cognito</span>
-          <span style={{ color: "#3f3f46" }}>·</span>
-          <span>DynamoDB</span>
-          <span style={{ color: "#3f3f46" }}>·</span>
-          <span>Bedrock</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <span>Configure</span>
+            <span style={{ color: "#27272a" }}>·</span>
+            <span>Deploy</span>
+            <span style={{ color: "#27272a" }}>·</span>
+            <span>Reply</span>
+          </div>
+          <div style={{ color: "#52525b" }}>Multi-tenant by design</div>
         </div>
       </div>
     ),

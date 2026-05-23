@@ -6,7 +6,7 @@ import {
 import {
   SearchKnowledgeRequestSchema,
   type SearchKnowledgeResponse,
-} from "@camunda-email-agent/shared";
+} from "@sable/shared";
 import { rawBody } from "../lib/parse.js";
 import {
   badRequest,

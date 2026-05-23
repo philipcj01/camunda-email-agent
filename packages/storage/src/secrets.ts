@@ -5,7 +5,7 @@ import {
   PutSecretValueCommand,
   ResourceExistsException,
 } from "@aws-sdk/client-secrets-manager";
-import type { TenantId } from "@camunda-email-agent/shared";
+import type { TenantId } from "@sable/shared";
 import { secretsManager } from "./clients.js";
 import { storageConfig } from "./config.js";
 

@@ -1,5 +1,5 @@
 {
-  "name": "@camunda-email-agent/camunda-client",
+  "name": "@sable/engine",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@camunda8/sdk": "^8.7.0",
-    "@camunda-email-agent/shared": "workspace:*"
+    "@sable/shared": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.6.3"

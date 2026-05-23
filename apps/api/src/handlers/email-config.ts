@@ -6,8 +6,8 @@ import {
   EmailConfigInputSchema,
   EmailConfigSchema,
   type EmailConfig,
-} from "@camunda-email-agent/shared";
-import { emailConfigRepo, secretsHelpers } from "@camunda-email-agent/storage";
+} from "@sable/shared";
+import { emailConfigRepo, secretsHelpers } from "@sable/storage";
 import { tenantFrom } from "../lib/auth.js";
 import { parseBody } from "../lib/parse.js";
 import { ok, serverError } from "../lib/response.js";

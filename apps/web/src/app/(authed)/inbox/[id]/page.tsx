@@ -3,7 +3,7 @@ import { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
 import { ArrowLeft, Bot, Hammer, Mail, Sparkles, Send } from "lucide-react";
-import type { Email, AgentStep, Thread, ThreadMessage } from "@camunda-email-agent/shared";
+import type { Email, AgentStep, Thread, ThreadMessage } from "@sable/shared";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

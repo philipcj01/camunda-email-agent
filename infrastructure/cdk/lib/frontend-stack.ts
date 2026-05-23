@@ -57,7 +57,7 @@ applications:
             - pnpm install --frozen-lockfile
         build:
           commands:
-            - pnpm --filter @camunda-email-agent/web build
+            - pnpm --filter @sable/web build
       artifacts:
         baseDirectory: .next
         files:

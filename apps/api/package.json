@@ -1,5 +1,5 @@
 {
-  "name": "@camunda-email-agent/api",
+  "name": "@sable/api",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -13,10 +13,10 @@
   "dependencies": {
     "@aws-sdk/client-bedrock-agent-runtime": "^3.700.0",
     "@aws-sdk/client-bedrock-agent": "^3.700.0",
-    "@camunda-email-agent/shared": "workspace:*",
-    "@camunda-email-agent/storage": "workspace:*",
-    "@camunda-email-agent/bpmn-generator": "workspace:*",
-    "@camunda-email-agent/camunda-client": "workspace:*",
+    "@sable/shared": "workspace:*",
+    "@sable/storage": "workspace:*",
+    "@sable/bpmn": "workspace:*",
+    "@sable/engine": "workspace:*",
     "zod": "^3.23.8"
   },
   "devDependencies": {
